@@ -1,0 +1,12 @@
+.board {
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
