@@ -1,0 +1,61 @@
+.person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.personInfo {
+  display: flex;
+  align-items: center;
+}
+
+.person h3 {
+  margin: 10px 20px;
+}
+
+.person img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.person p {
+  margin: 10px 20px;
+}
+
+.dismessButton {
+  background-color: transparent; /* Green */
+  border: 2px solid #317b22;
+  color: #317b22;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.dismessButton:hover {
+  background-color: #98daaf;
+}
+
+.clearButton {
+  background-color: transparent; /* Green */
+  border: 2px solid #317b22;
+  color: #317b22;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.clearButton:hover {
+  background-color: #98daaf;
+}
