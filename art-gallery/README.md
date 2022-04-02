@@ -1,4 +1,4 @@
-### Art gallery with resources pulled from the Metropolitan Museum of Art API
+### --Art gallery with resources pulled from the Metropolitan Museum of Art API
 
 # Getting Started with Create React App
 
