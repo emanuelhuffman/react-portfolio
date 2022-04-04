@@ -1,6 +1,6 @@
-#Learn your times tables fast with times tables learner!
+# Learn your times tables fast with times tables learner!
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
