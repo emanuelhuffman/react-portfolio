@@ -51,7 +51,7 @@ function App() {
   };
 
   useEffect(() => {
-    // fetchPokemon(10);
+    fetchPokemon(10);
   }, []);
 
   useEffect(() => {
