@@ -1,0 +1,26 @@
+.container {
+  width: 90%;
+  margin: 20px auto 0 auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.loadButton {
+  background-color: #747c92;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto 30px auto;
+  padding: 10px 15px;
+  border-radius: 20px;
+  user-select: none;
+  font-size: 32px;
+  box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
+}
+
+.loadButton:hover {
+  background-color: #858b9b;
+  cursor: pointer;
+}

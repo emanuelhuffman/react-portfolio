@@ -1,0 +1,23 @@
+.container {
+  margin: 5px auto 10px auto;
+  width: 90%;
+}
+
+.subContainer button {
+  background-color: rgb(253, 171, 18);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  user-select: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.subContainer button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 187, 62);
+}
