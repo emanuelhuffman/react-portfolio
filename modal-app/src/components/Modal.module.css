@@ -1,0 +1,44 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(131, 122, 117, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #dafeb7;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.container h3,
+p {
+  margin-top: 0px;
+}
+
+.buttons button {
+  margin: 5px 20px;
+  margin-top: 20px;
+  border: none;
+  background: #acc18a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 22px;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+
+.buttons button:hover {
+  background: #b6cb93;
+  cursor: pointer;
+}

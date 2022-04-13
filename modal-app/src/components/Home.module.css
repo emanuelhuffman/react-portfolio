@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.btn {
+  margin-top: 50vh;
+  position: absolute;
+  border: none;
+  background: #acc18a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 22px;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+
+.btn:hover {
+  background: #bed19e;
+  cursor: pointer;
+}
