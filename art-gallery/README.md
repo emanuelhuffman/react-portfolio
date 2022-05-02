@@ -1,6 +1,6 @@
 # Art Gallery Project
 
-Resources pulled from the Metropolitan Museum of Art API
+Resources pulled from the Metropolitan Museum of Art API --> https://metmuseum.github.io/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
