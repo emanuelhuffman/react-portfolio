@@ -1,4 +1,4 @@
-# Learn your times tables fast with times tables learner!
+# Times Tables Learner Project
 
 ## Getting Started with Create React App
 
