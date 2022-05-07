@@ -1,6 +1,6 @@
 # Pokemon type filter project
 
--Pokemon type react app fetching from https://pokeapi.co/
+-Pokemon React app fetching from https://pokeapi.co/
 
 -Dynamically shows filter tabs based off which pokemon are currently being displayed
 
