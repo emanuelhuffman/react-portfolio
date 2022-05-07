@@ -1,9 +1,9 @@
 # Art Gallery Project
 
--React app displaying art pulled from the Metropolitan Museum of Art API --> https://metmuseum.github.io/ /n
--Dynamically toggle between more or less information on card
--Remove card from state using 'Not Interested' button
--Use of useState hook, useEffect hook, and async/await functions
+-React app displaying art pulled from the Metropolitan Museum of Art API --> https://metmuseum.github.io/  
+-Dynamically toggle between more or less information on card  
+-Remove card from state using 'Not Interested' button  
+-Use of useState hook, useEffect hook, and async/await functions  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
