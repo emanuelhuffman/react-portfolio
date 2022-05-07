@@ -1,7 +1,9 @@
 # Pokemon type filter project
 
 -React app fetching the pokemon api from https://pokeapi.co/
+
 -Dynamically shows filter tabs based off which pokemon are currently being displayed
+
 -Use of useState, useEffect, and async/await functions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
