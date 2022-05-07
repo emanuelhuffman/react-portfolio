@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
--Basic React app calculator
--Utilizing seperate compoenents to build one big component
--Use of prop drilling
+-Basic React app calculator  
+-Utilizing seperate compoenents to build one big component  
+-Use of prop drilling  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
