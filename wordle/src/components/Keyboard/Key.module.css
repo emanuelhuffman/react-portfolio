@@ -1,0 +1,26 @@
+.key {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 5px;
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(95, 95, 95);
+}
+
+.correct {
+  background-color: rgb(62, 125, 62);
+  border-color: rgb(62, 125, 62);
+}
+
+.wrongSpot {
+  background-color: rgb(172, 128, 48);
+  border-color: rgb(172, 128, 48);
+}
+
+.wrong {
+  background-color: #1b1b1b;
+  border-color: #1b1b1b;
+}

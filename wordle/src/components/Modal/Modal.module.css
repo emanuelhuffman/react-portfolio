@@ -1,0 +1,53 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgb(14, 14, 14);
+  padding: 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  position: relative;
+}
+
+.closeModal {
+  border: none;
+  background: transparent;
+  color: rgb(224, 224, 224);
+  font-size: 32px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.closeModal:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.playAgain {
+  margin: 5px 20px;
+  margin-top: 20px;
+  border: none;
+  background: rgb(62, 125, 62);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.playAgain:hover {
+  background: rgb(78, 154, 78);
+  cursor: pointer;
+}

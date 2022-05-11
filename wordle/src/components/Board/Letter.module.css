@@ -1,0 +1,25 @@
+.box {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #242424;
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  text-align: center;
+}
+
+.correct {
+  background-color: rgb(62, 125, 62);
+  border-color: rgb(62, 125, 62);
+}
+
+.wrongSpot {
+  background-color: rgb(172, 128, 48);
+  border-color: rgb(172, 128, 48);
+}
+
+.wrong {
+  background-color: #242424;
+}

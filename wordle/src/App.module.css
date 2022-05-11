@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputField {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: default;
+}
+
+.title {
+  font-size: 30px;
+  margin: 10px;
+}
