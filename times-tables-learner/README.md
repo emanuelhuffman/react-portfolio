@@ -1,4 +1,7 @@
-# Learn your times tables fast with times tables learner!
+# Times Tables Learner Project
+
+-Learn your times tables quickly with this React app  
+-Use of useReducer, useState, and useEffect hooks  
 
 ## Getting Started with Create React App
 
