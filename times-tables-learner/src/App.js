@@ -4,9 +4,9 @@ import Selectors from "./components/Selectors";
 import Input from "./components/Input";
 import Display from "./components/Display";
 import Feedback from "./components/Feedback";
+import Modal from "./components/modal/Modal";
 import { useReducer, useState, useEffect } from "react";
 
-// Wanted Practice with useReducer
 function reducer(state, action) {
   switch (action.type) {
     case "toggleNum":
@@ -70,6 +70,8 @@ function App() {
   const [problem, setProblem] = useState([]);
   const [prevProblem, setPrevProblem] = useState([]);
   const [feedback, setFeedback] = useState("");
+  const [isMultiplier, setIsMultiplier] = useState(false);
+  const [isModal, setIsModal] = useState(false);
 
   const setSelector = (val) => {
     dispatch({ type: "toggleNum", payload: { val: val } });
@@ -109,7 +111,23 @@ function App() {
 
   return (
     <Card>
-      <Selectors setSelector={setSelector} selectors={selectors} />
+      {isModal && (
+        <Modal isModal={isModal} closeModal={() => setIsModal(!isModal)} />
+      )}
+      <div>
+        <button
+          className="topBtns"
+          onClick={() => setIsMultiplier(!isMultiplier)}
+        >
+          Multipliers
+        </button>
+        <button onClick={() => setIsModal(!isModal)} className="topBtns">
+          Table
+        </button>
+      </div>
+      {isMultiplier && (
+        <Selectors setSelector={setSelector} selectors={selectors} />
+      )}
       <div className="inputAndDisplay">
         <Feedback feedback={feedback} problem={prevProblem} />
         <Display problem={problem} />

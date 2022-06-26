@@ -1,35 +1,43 @@
 .card {
   margin: 2rem auto 0 auto;
-  width: 60rem;
-  background-color: #26413c;
+  width: 80%;
+  background-color: transparent;
   border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding: 10px 0 10px 0;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .display-card {
-  width: 30rem;
+  width: 100%;
   height: 9rem;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 15px auto;
   background-color: #2d4c46;
   border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.inputAndDisplay {
+  width: 70%;
+  margin-right: 20px;
 }
 
 .table-buttons {
-  width: 25rem;
+  width: 70%;
   background-color: #2d4c46;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .table-buttons .row {
@@ -38,8 +46,8 @@
 }
 
 .table-buttons button {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
   border: none;
   text-align: center;
@@ -54,7 +62,7 @@
 }
 
 button {
-  background-color: #f2e8cf;
+  background-color: #fff;
 }
 
 .table-buttons button:hover {
@@ -67,12 +75,14 @@ button {
 
 /* Form styles */
 .form-box {
-  width: 29.5em;
+  width: 99%;
   background-color: #2d4c46;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding: 10px;
   padding-right: 18px;
+  align-self: center;
+  margin-left: 20px;
 }
 
 .form-box input {
@@ -81,20 +91,20 @@ button {
   text-align: center;
   font-size: 64px;
   caret-color: transparent;
-  background-color: #f2e8cf;
+  background-color: #e0ddcf;
   border: none;
   border-radius: 5px;
 }
 
 .form-box input:focus {
-  background-color: white;
+  background-color: #e0ddcf;
 }
 
 /* Display styles */
 
 .question {
   font-size: 64px;
-  color: white;
+  color: #e0ddcf;
   text-align: center;
 }
 
@@ -102,7 +112,7 @@ button {
 .feedback {
   height: 100%;
   font-size: 48px;
-  color: white;
+  color: #e0ddcf;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -127,4 +137,18 @@ button {
   font-size: 18px;
   color: white;
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  .table-buttons {
+    width: 100%;
+  }
+
+  .display-card {
+    width: 100%;
+  }
+
+  .inputAndDisplay {
+    width: 100%;
+  }
 }

@@ -18,8 +18,8 @@ const Feedback = ({ feedback, problem }) => {
       )}
       {feedback === "" && (
         <div className="initial-feedback">
-          Keys to the left let you pick which numbers to practice. Type your
-          answer into the box below to begin!
+          Welcome! Enter the answer to the problem in the box below. Click the
+          multipliers button to select which numbers to practice.
         </div>
       )}
     </div>
