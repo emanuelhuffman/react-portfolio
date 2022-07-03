@@ -2,7 +2,7 @@ import "./App.css";
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import { useEffect, useState } from "react";
-import { ai } from "./ai";
+import { depth } from "./ai";
 
 const chess = new Chess();
 
@@ -13,7 +13,7 @@ function App() {
   //ai
   useEffect(() => {
     if (chess.turn() === "b") {
-      const aiMove = ai(chess.fen());
+      const aiMove = depth(chess.fen());
       if (aiMove) {
         chess.move(aiMove);
       } else {
