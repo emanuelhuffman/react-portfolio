@@ -14,12 +14,12 @@ const pieceValues = {
 const pieces = ["p", "r", "n", "b", "q", "P", "R", "N", "B", "Q"];
 
 export const bestMoveDepth1 = (fen) => {
-  const chess = new Chess(fen);
+  const chess = new Chess(fen); //load board with fen
   let bestScoringMove = "";
 
   if (!chess.game_over()) {
-    let scores = scoreForAllMoves(fen);
-    if (scores.length != 0) {
+    let scores = scoreForAllMoves(fen); //dictionary with score for each move
+    if (Object.keys(scores).length !== 0) {
       bestScoringMove = Object.keys(scores).reduce((a, b) =>
         scores[a] < scores[b] ? a : b
       );
@@ -56,7 +56,7 @@ const scoreForAllMoves = (fen) => {
       if (chess.in_checkmate()) {
         moveScores[move] = 100;
       } else {
-        if (boardScore(chess.fen()) >= moveScores[move]) {
+        if (boardScore(chess.fen()) > moveScores[move]) {
           moveScores[move] = boardScore(chess.fen());
         }
       }
