@@ -1,8 +1,4 @@
 import { Chess } from "chess.js";
-// const bPieceValue = { p: 1, r: 5, n: 3, b: 3, q: 9 };
-// const wPieceValue = { P: 1, R: 5, N: 3, B: 3, Q: 9 };
-const bScoreMult = -1;
-const wScoreMult = 1;
 const pieceValues = {
   p: -1,
   r: -5,
@@ -17,13 +13,12 @@ const pieceValues = {
 };
 const pieces = ["p", "r", "n", "b", "q", "P", "R", "N", "B", "Q"];
 
-export const depth = (fen) => {
+export const bestMoveDepth1 = (fen) => {
   const chess = new Chess(fen);
   let bestScoringMove = "";
 
   if (!chess.game_over()) {
     let scores = scoreForAllMoves(fen);
-
     if (scores.length != 0) {
       bestScoringMove = Object.keys(scores).reduce((a, b) =>
         scores[a] < scores[b] ? a : b
@@ -34,6 +29,7 @@ export const depth = (fen) => {
 };
 
 //score of all moves: negative for black, positive for white
+//returns value of all moves taking into account oppononts move
 const scoreForAllMoves = (fen) => {
   const moveScores = {};
   const chess = new Chess(fen);
@@ -49,10 +45,8 @@ const scoreForAllMoves = (fen) => {
     chess.move(move);
     if (chess.in_checkmate()) {
       moveScores[move] = -1000;
-    } else {
-      if (boardScore(chess.fen()) <= moveScores[move]) {
-        moveScores[move] = boardScore(chess.fen()); //current board score + what will it be after move is made
-      }
+    } else if (boardScore(chess.fen()) < moveScores[move]) {
+      moveScores[move] = boardScore(chess.fen()); //current board score + what will it be after move is made
     }
 
     //Check all opponent moves
@@ -62,14 +56,12 @@ const scoreForAllMoves = (fen) => {
       if (chess.in_checkmate()) {
         moveScores[move] = 100;
       } else {
-        if (boardScore(chess.fen()) > moveScores[move]) {
+        if (boardScore(chess.fen()) >= moveScores[move]) {
           moveScores[move] = boardScore(chess.fen());
-          console.log(moveScores);
         }
       }
       chess.undo();
     });
-
     chess.undo();
   });
 
