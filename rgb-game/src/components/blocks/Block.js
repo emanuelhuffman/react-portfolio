@@ -1,17 +1,11 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import styles from "./Blocks.module.css";
 
-const Block = () => {
+const Block = ({ color }) => {
   return (
-    <Card
-      style={{
-        background: "red",
-        width: "200px",
-        height: "200px",
-      }}
-    >
-      Block
-    </Card>
+    <div className={styles.block} style={{ background: color }}>
+      {" "}
+    </div>
   );
 };
 
