@@ -5,4 +5,19 @@
   width: 100%;
   background: #84d2f6;
   height: 10rem;
+  z-index: 5;
+}
+
+.guessBox {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.guessBox div {
+  margin: 5px;
+}
+
+.guessBox div:nth-last-of-type(1) {
+  font-size: 42px;
 }

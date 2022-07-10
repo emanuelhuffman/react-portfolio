@@ -16,7 +16,8 @@
 .block:hover {
   cursor: pointer;
   border-color: rgb(0, 0, 0);
-  width: 202px;
-  height: 202px;
+  margin: 10px 7.5px 5px 7.5px;
+  width: 205px;
+  height: 205px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 }

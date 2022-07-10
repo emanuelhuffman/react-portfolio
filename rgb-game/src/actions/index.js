@@ -10,3 +10,13 @@ export const handleGuess = (guess) => {
     payload: guess,
   };
 };
+
+export const newColors = () => {
+  return {
+    type: "NEW_COLORS",
+  };
+};
+
+export const changeLevel = (level) => {
+  return { type: "CHANGE_LEVEL", payload: level };
+};
