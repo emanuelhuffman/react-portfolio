@@ -4,7 +4,7 @@ import styles from "./Nav.module.css";
 const Nav = () => {
   return (
     <div className={styles.nav}>
-      <span>New Color</span>
+      <span>Skip</span>
       <div>
         <span>Easy</span>
         <span>Hard</span>

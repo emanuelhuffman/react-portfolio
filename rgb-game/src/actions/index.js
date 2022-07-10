@@ -9,5 +9,4 @@ export const handleGuess = (guess) => {
     type: "GUESS",
     payload: guess,
   };
-  
 };

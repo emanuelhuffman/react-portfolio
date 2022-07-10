@@ -19,8 +19,9 @@ const gameReducer = (state = initialState, action) => {
       return state.rgbValues;
 
     case "GUESS":
-      console.log("guessed");
-      return action.payload;
+      console.log(action.payload);
+      console.log(state.answer);
+      return state;
 
     case "RANDOM_COLOR":
       const newAnswer = randRGBColor();
