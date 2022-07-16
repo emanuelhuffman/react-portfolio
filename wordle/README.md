@@ -1,5 +1,5 @@
 # Computer Science Wordle
--It's wordle, but the words are all related to computer science!
+-Wordle but uses only computer science words  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
