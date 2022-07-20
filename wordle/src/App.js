@@ -13,7 +13,7 @@ function App() {
 
   const getWord = () => {
     return words.words[
-      Math.floor(Math.random() * words.words.length)
+      Math.floor(Math.random() * words.words.length) //Get word at random index
     ].toUpperCase();
   };
 
