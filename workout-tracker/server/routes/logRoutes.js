@@ -13,6 +13,6 @@ router.post("/", setLog);
 
 router.put("/:id", updateLog);
 
-router.delete("/id", deleteLog);
+router.delete("/:id", deleteLog);
 
 module.exports = router;
