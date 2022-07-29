@@ -1,11 +1,12 @@
 const asyncHandler = require("express-async-handler");
 const Log = require("../model/logModel");
+const User = require("../model/userModel");
 
 // @desc Get logs
 // @route GET /api/logs
 // @access Private
 const getLogs = asyncHandler(async (req, res) => {
-  const logs = await Log.find();
+  const logs = await Log.find({ user: req.user.id });
 
   res.status(200).json(logs);
 });
@@ -21,6 +22,7 @@ const setLog = asyncHandler(async (req, res) => {
 
   const log = await Log.create({
     text: req.body.text,
+    user: req.user.id,
   });
   res.status(200).json(log);
 });
@@ -34,6 +36,20 @@ const updateLog = asyncHandler(async (req, res) => {
   if (!log) {
     res.status(400);
     throw new Error("Log does not exist");
+  }
+
+  const user = await User.findById(req.user.id);
+
+  //check for user
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  //Make sure the logged in user matches the log user
+  if (log.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error("User not authorized");
   }
 
   const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, {
@@ -52,6 +68,20 @@ const deleteLog = asyncHandler(async (req, res) => {
   if (!log) {
     res.status(400);
     throw new Error("Log does not exist");
+  }
+
+  const user = await User.findById(req.user.id);
+
+  //check for user
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  //Make sure the logged in user matches the log user
+  if (log.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error("User not authorized");
   }
 
   await log.remove();

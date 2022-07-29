@@ -6,13 +6,14 @@ const {
   updateLog,
   deleteLog,
 } = require("../controllers/logController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.get("/", getLogs);
+router.get("/", protect, getLogs);
 
-router.post("/", setLog);
+router.post("/", protect, setLog);
 
-router.put("/:id", updateLog);
+router.put("/:id", protect, updateLog);
 
-router.delete("/:id", deleteLog);
+router.delete("/:id", protect, deleteLog);
 
 module.exports = router;
