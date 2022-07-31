@@ -38,16 +38,14 @@ const updateLog = asyncHandler(async (req, res) => {
     throw new Error("Log does not exist");
   }
 
-  const user = await User.findById(req.user.id);
-
   //check for user
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User not found");
   }
 
   //Make sure the logged in user matches the log user
-  if (log.user.toString() !== user.id) {
+  if (log.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");
   }
@@ -70,16 +68,14 @@ const deleteLog = asyncHandler(async (req, res) => {
     throw new Error("Log does not exist");
   }
 
-  const user = await User.findById(req.user.id);
-
   //check for user
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User not found");
   }
 
   //Make sure the logged in user matches the log user
-  if (log.user.toString() !== user.id) {
+  if (log.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");
   }

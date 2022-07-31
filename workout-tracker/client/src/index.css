@@ -86,20 +86,20 @@ h3 {
   color: #828282;
 }
 
-.goals {
+.logs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-.goal {
+.log {
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
 }
 
-.goal .close {
+.log .close {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -186,8 +186,8 @@ h3 {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #000 transparent #555 transparent;
-  border-radius: 50%;
+  border-color: rgb(255, 0, 0) transparent #555 transparent;
+  border-radius: 10%;
   animation: spin 1.2s linear infinite;
 }
 
