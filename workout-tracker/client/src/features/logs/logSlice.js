@@ -9,6 +9,8 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
+  isEditing: false,
+  curLogId: "",
   message: "",
 };
 
@@ -45,6 +47,25 @@ export const getLogs = createAsyncThunk("logs/getAll", async (_, thunkAPI) => {
   }
 });
 
+//update
+export const updateLog = createAsyncThunk(
+  "logs/update",
+  async (logData, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await logService.updateLog(logData, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 //delete log
 export const deleteLog = createAsyncThunk(
   "logs/delete",
@@ -69,6 +90,10 @@ export const logSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => initialState,
+    setIsEditing: (state, action) => {
+      state.isEditing = action.payload[0];
+      state.curLogId = action.payload[1];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -98,6 +123,24 @@ export const logSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       })
+      .addCase(updateLog.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateLog.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.logs = [
+          ...state.logs.filter((log) => log._id !== action.payload._id),
+          action.payload,
+        ];
+        state.isEditing = false;
+      })
+      .addCase(updateLog.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+        state.isEditing = false;
+      })
       .addCase(deleteLog.pending, (state) => {
         state.isLoading = true;
       })
@@ -114,5 +157,5 @@ export const logSlice = createSlice({
   },
 });
 
-export const { reset } = logSlice.actions;
+export const { reset, setIsEditing } = logSlice.actions;
 export default logSlice.reducer;

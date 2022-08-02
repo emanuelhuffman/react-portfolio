@@ -1,6 +1,5 @@
 const asyncHandler = require("express-async-handler");
 const Log = require("../model/logModel");
-const User = require("../model/userModel");
 
 // @desc Get logs
 // @route GET /api/logs
@@ -15,13 +14,14 @@ const getLogs = asyncHandler(async (req, res) => {
 // @route POST /api/logs
 // @access Private
 const setLog = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!req.body.date || !req.body.exercises) {
     res.status(400);
-    throw new Error("Please add a text field");
+    throw new Error("Please add all fields");
   }
-
+  const newDate = req.body.date.replaceAll("-", "/");
   const log = await Log.create({
-    text: req.body.text,
+    date: newDate,
+    exercises: req.body.exercises,
     user: req.user.id,
   });
   res.status(200).json(log);

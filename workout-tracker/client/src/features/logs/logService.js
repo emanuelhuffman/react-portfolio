@@ -15,6 +15,24 @@ const createLog = async (logData, token) => {
   return response.data;
 };
 
+// Update log
+const updateLog = async (logData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const logId = logData[0];
+  const response = await axios.put(
+    "http://localhost:5000/api/logs/" + logId,
+    logData[1],
+    config
+  );
+
+  return response.data;
+};
+
 //Get logs
 const getLogs = async (token) => {
   const config = {
@@ -45,6 +63,7 @@ const logService = {
   createLog,
   getLogs,
   deleteLog,
+  updateLog,
 };
 
 export default logService;

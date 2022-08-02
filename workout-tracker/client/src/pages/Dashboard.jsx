@@ -5,13 +5,14 @@ import LogForm from "../components/LogForm";
 import LogItem from "../components/LogItem";
 import Spinner from "../components/Spinner";
 import { getLogs, reset } from "../features/logs/logSlice";
+import EditModal from "../components/EditModal";
 
 function Dashboard() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.auth);
-  const { logs, isLoading, isError, message } = useSelector(
+  const { logs, isLoading, isError, message, isEditing } = useSelector(
     (state) => state.logs
   );
 
@@ -37,10 +38,6 @@ function Dashboard() {
 
   return (
     <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Logs Dashboard</p>
-      </section>
       <LogForm />
       <section className="content">
         {logs.length > 0 ? (
@@ -53,6 +50,7 @@ function Dashboard() {
           <h3>You have not set any logs</h3>
         )}
       </section>
+      {isEditing && <EditModal />}
     </>
   );
 }

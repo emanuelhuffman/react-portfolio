@@ -5,11 +5,15 @@ const logSchema = mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'User'
+      ref: "User",
     },
-    text: {
-      type: String,
-      required: [true, "Please add text value"],
+    date: {
+      type: Date,
+      required: [true, "Please add a date"],
+    },
+    exercises: {
+      type: Array,
+      required: [true, "Please add exercises"],
     },
   },
   { timestamps: true }
