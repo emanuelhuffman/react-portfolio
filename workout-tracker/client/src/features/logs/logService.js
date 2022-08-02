@@ -24,11 +24,7 @@ const updateLog = async (logData, token) => {
   };
 
   const logId = logData[0];
-  const response = await axios.put(
-    "http://localhost:5000/api/logs/" + logId,
-    logData[1],
-    config
-  );
+  const response = await axios.put(API_URL + logId, logData[1], config);
 
   return response.data;
 };
