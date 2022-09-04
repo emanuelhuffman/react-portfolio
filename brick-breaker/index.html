@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Brick Breaker</title>
+    <meta charset="UTF-8" />
+    <style>
+      #gameScreen {
+        border: 1px solid black;
+      }
+      img {
+        display: none;
+      }
+      html {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        background-color: rgb(24, 24, 24);
+      }
+      canvas {
+        background-color: rgb(174, 174, 174);
+      }
+    </style>
+  </head>
+  <body>
+    <img id="imgBall" src="./assets/imgs/ball.png" />
+    <img id="imgBrick" src="./assets/imgs/brick.png" />
+    <canvas id="gameScreen" width="800" height="600"></canvas>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
